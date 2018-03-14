@@ -430,7 +430,7 @@ bool StelSkyDrawer::drawPointSource(StelPainter* sPainter, const Vec3f& v, const
 	const float tw = (flagStarTwinkle && flagHasAtmosphere) ? (1.f-twinkleAmount*qrand()/RAND_MAX)*rcMag.luminance : rcMag.luminance;
 
 	// If the rmag is big, draw a big halo
-	if (radius>MAX_LINEAR_RADIUS+5.f)
+	/*if (radius>MAX_LINEAR_RADIUS+5.f)
 	{
 		float cmag = qMin(rcMag.luminance,(float)(radius-(MAX_LINEAR_RADIUS+5.f))/30.f);
 		float rmag = 150.f;
@@ -443,7 +443,7 @@ bool StelSkyDrawer::drawPointSource(StelPainter* sPainter, const Vec3f& v, const
 		glEnable(GL_BLEND);				
 		sPainter->setColor(color[0]*cmag, color[1]*cmag, color[2]*cmag);
 		sPainter->drawSprite2dModeNoDeviceScale(win[0], win[1], rmag);
-	}
+	}*/
 
 	unsigned char starColor[3] = {0, 0, 0};
 	starColor[0] = (unsigned char)std::min((int)(color[0]*tw*255+0.5f), 255);
